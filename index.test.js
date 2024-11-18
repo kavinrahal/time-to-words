@@ -15,4 +15,14 @@ describe('Time to words', () => {
     const timeInWords = convertTimeToWords('2:45');
     expect(timeInWords).toBe('quarter to three');
   });
+
+  it('Handles times when minutes are 00', () => {
+    const timeInWords = convertTimeToWords('2:00');
+    expect(timeInWords).toBe("two o'clock");
+  });
+
+  it('Handles times when in 24h format', () => {
+    const timeInWords = convertTimeToWords('18:45');
+    expect(timeInWords).toBe('quarter to seven');
+  });
 });
